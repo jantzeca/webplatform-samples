@@ -139,19 +139,10 @@
     </div>
   </div>
   <div class="sidebyside">
-    <!-- <button id="email_button" class="button" onclick="emailButton()">
-      Create Email
-    </button>
-    <div id="email_info" class="info">
-      Text sent to default email application.<br />
-      (See chrome://settings/handlers to change.)
-    </div> -->
   </div>
   <p></p>
   <div id="div_language">
     <select id="select_language"></select>
-    <!-- &nbsp;&nbsp; -->
-    <!-- <select style="display: none;" id="select_dialect"></select> -->
   </div>
 </div>
 <script>
@@ -168,15 +159,11 @@
     // TODO: Find Swedish
   ]
 
-  // for (var i = 0; i < langs.length; i++) {
-  //   select_language.options[i] = new Option(langs[i][0], i)
-  // }
   langs.forEach((lang, i) => {
     select_language.options[i] = new Option(lang[0], i)
   })
   // Set to english by default
-  select_language.selectedIndex = 1
-  // select_dialect.selectedIndex = 0
+  select_language.selectedIndex = 1 // just get the language from the state in ulang
   showInfo('info_start')
 
   // var create_email = false
@@ -236,6 +223,7 @@
         showInfo('info_start')
         return
       }
+      // No info to show
       showInfo('')
     }
 
